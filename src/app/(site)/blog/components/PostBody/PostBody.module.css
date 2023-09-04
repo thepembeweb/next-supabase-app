@@ -1,0 +1,180 @@
+.PostBody h1 {
+  @apply font-bold text-4xl mt-14;
+}
+
+.PostBody h2 {
+  @apply font-semibold text-2xl lg:text-3xl mt-12 mb-4 border-b border-b-gray-100 pb-2;
+}
+
+:global(.dark) .PostBody h2 {
+  @apply border-b-dark-700;
+}
+
+.PostBody h3 {
+  @apply font-bold text-2xl mt-10;
+}
+
+.PostBody h4 {
+  @apply font-bold text-xl mt-8;
+}
+
+.PostBody h5 {
+  @apply font-semibold text-lg mt-6;
+}
+
+.PostBody h6 {
+  @apply font-medium text-base mt-2;
+}
+
+/**
+Tailwind "dark" variants do not work with CSS Modules
+We work it around using :global(.dark)
+For more info: https://github.com/tailwindlabs/tailwindcss/issues/3258#issuecomment-770215347
+*/
+:global(.dark) .PostBody h1,
+:global(.dark) .PostBody h2,
+:global(.dark) .PostBody h3,
+:global(.dark) .PostBody h4,
+:global(.dark) .PostBody h5,
+:global(.dark) .PostBody h6 {
+  @apply text-white;
+}
+
+.BodyText {
+  font-family: ui-sans-serif,
+  system-ui,
+  -apple-system,
+  BlinkMacSystemFont,
+  Segoe UI,
+  Roboto,
+  Helvetica Neue,
+  Arial,
+  Noto Sans,
+  sans-serif,
+  Apple Color Emoji,
+  Segoe UI Emoji,
+  Segoe UI Symbol,
+  Noto Color Emoji;
+}
+
+.PostBody > p {
+  @apply BodyText text-base dark:text-gray-300 mt-2 mb-4 leading-7;
+}
+
+.PostBody li {
+  @apply BodyText text-base my-1.5 leading-7 dark:text-gray-300;
+}
+
+.PostBody b,
+.PostBody strong {
+  @apply font-bold;
+}
+
+:global(.dark) .PostBody b,
+:global(.dark) .PostBody strong {
+  @apply text-white;
+}
+
+.PostBody img,
+.PostBody video {
+  @apply rounded-lg;
+}
+
+.PostBody ul,
+.PostBody ol {
+  @apply pl-1;
+}
+
+.PostBody ul {
+  @apply list-disc;
+}
+
+.PostBody ol > li {
+  counter-increment: counts;
+}
+
+.PostBody ol > li:before {
+  @apply font-bold mr-3 inline-flex;
+
+  content: counters(counts,".") ". ";
+  font-feature-settings: "tnum";
+}
+
+.PostBody blockquote {
+  @apply my-12 p-6 font-medium text-lg text-gray-600
+    font-sans border-l-4 border-primary-500;
+}
+
+:global(.dark) .PostBody blockquote {
+  @apply text-white;
+}
+
+.PostBody pre {
+  @apply my-6 text-sm text-current;
+}
+
+.PostBody pre[filename]:before {
+  font-family: Monospace;
+  display: inline-block;
+  content: attr(filename);
+  padding: 0.5rem 1rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 0.35rem;
+  border-top-right-radius: 0.35rem;
+
+  @apply bg-dark-800 relative left-3 text-[0.55rem] md:text-sm font-bold;
+}
+
+.PostBody pre[filename] {
+  @apply bg-dark-700 pt-3 rounded-md;
+}
+
+.PostBody pre[filename] code {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+:global(.dark) .PostBody pre {
+  @apply shadow-none my-8;
+}
+
+.PostBody code {
+  @apply rounded-md bg-gray-100;
+
+  word-break: break-word;
+}
+
+.PostBody pre > code {
+  @apply p-3 md:p-6 text-xs md:text-sm font-medium font-monospace block bg-gray-100 dark:bg-dark-800;
+
+  white-space: pre-wrap;
+}
+
+:global(.dark) .PostBody code {
+  @apply bg-dark-800 rounded-xl;
+}
+
+.PostBody p > code,
+.PostBody li > code {
+  @apply px-1 py-0.5 border border-dark-600  rounded mx-0.5 font-semibold text-sm;
+}
+
+:global(.dark) .PostBody p > code,
+:global(.dark) .PostBody li > code {
+  @apply bg-dark-700;
+}
+
+.PostBody hr {
+  @apply mt-8 mb-6;
+}
+
+.PostBody p > a,
+:global(.dark) .PostBody li > a {
+  @apply font-medium;
+}
+
+:global(.dark) .PostBody p > a,
+:global(.dark) .PostBody li > a {
+  @apply text-primary-600 font-semibold underline hover:text-primary-500;
+}

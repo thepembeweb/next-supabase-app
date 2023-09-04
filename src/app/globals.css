@@ -1,0 +1,19 @@
+/* Add here you favorite fonts */
+@import './components.css';
+
+@tailwind base;
+
+/* Start purging... */
+@tailwind utilities;
+/* Stop purging. */
+
+body {
+  text-rendering: geometricPrecision;
+  font-feature-settings: 'rlig' 1, 'calt' 1, 'ss01' 1;
+
+  @apply bg-white text-gray-800 antialiased dark:bg-dark-900 dark:text-gray-300;
+}
+
+.hero-image-shadow {
+  box-shadow: 0 0 800px 0 var(--tw-shadow-color);
+}

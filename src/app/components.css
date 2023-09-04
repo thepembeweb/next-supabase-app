@@ -1,0 +1,80 @@
+/* Start purging... */
+@tailwind components;
+
+@layer components {
+  /* Global Link Style */
+  a {
+    @apply outline-2 outline-primary-200 active:outline-none;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:active,
+  input:-webkit-autofill:focus {
+    @apply border-none shadow-[inset_0_0_0_1000] shadow-white;
+  }
+
+  .Toggle {
+    @apply h-6 w-12 cursor-pointer appearance-none
+        rounded-xl bg-gray-600 duration-300 ease-in-out dark:bg-gray-300;
+
+    transition: all 0.25s ease-in-out;
+    box-shadow: calc(1.5rem * -1) 0 0 2px #efefef inset, 0 0 0 2px #efefef inset;
+  }
+
+  .dark .Toggle {
+    box-shadow: calc(1.5rem * -1) 0 0 2px #525252 inset, 0 0 0 2px #525252 inset;
+  }
+
+  .Toggle:hover {
+    box-shadow: calc(1.5rem * -1) 0 0 2px #ddd inset, 0 0 0 2px #ddd inset;
+  }
+
+  .dark .Toggle:hover {
+    box-shadow: calc(1.5rem * -1) 0 0 2px #666 inset, 0 0 0 2px #666 inset;
+  }
+
+  .Toggle:focus-visible {
+    @apply outline outline-primary-500;
+
+    outline-offset: 2px;
+  }
+
+  .Toggle:checked {
+    @apply border-primary-400 border-opacity-100
+        bg-primary-500 bg-opacity-100;
+
+    box-shadow: 1.5rem 0 0 2px #eee inset, 0 0 0 2px #eee inset;
+  }
+
+  .dark .Toggle:checked {
+    box-shadow: 1.5rem 0 0 2px #444 inset, 0 0 0 2px #444 inset;
+  }
+
+  .Table {
+    @apply w-full table-fixed border-collapse border-spacing-0 rounded-lg bg-white p-1 dark:bg-dark-900;
+  }
+
+  .Table thead {
+    @apply sticky top-0 m-0 bg-white dark:bg-dark-900;
+  }
+
+  .Table th {
+    @apply border-b border-gray-200 py-4 text-left text-xs
+        font-bold uppercase text-gray-600 dark:border-dark-700 dark:text-gray-400;
+  }
+
+  .Table tr {
+    @apply border-b border-gray-100 dark:border-dark-800;
+  }
+
+  .Table tr:last-child {
+    @apply border-transparent;
+  }
+
+  .Table td {
+    @apply py-2.5 text-sm;
+  }
+}
+
+/* Stop purging. */
